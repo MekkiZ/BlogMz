@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'authenticate',
     'posts',
     'profil',
+    'tailwind'
 ]
 AUTH_USER_MODEL = 'authenticate.UserCus'
 
