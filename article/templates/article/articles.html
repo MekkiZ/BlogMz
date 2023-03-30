@@ -1,10 +1,84 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'article/base.html' %}
+{% load static %}
+{% block content %}
+    <br>
+    <section class="container-section">
+        <!-- Horizontal -->
+        <div class="slider-container slider-1">
+            <div class="slider">
+                <div class="container-article">
 
-</body>
-</html>
+                    <p>dfgdfgdf</p>
+                </div>
+                <div class="container-article">
+                    <p>dfgdfgdf</p>
+
+                </div>
+                <div class="container-article">
+
+                    <p>dfgdfgdf</p>
+                </div>
+                <div class="container-article">
+
+                    <p>dfgdfgdf</p>
+                </div>
+                <div class="container-article">
+                    <p>dfgdfgdf</p>
+
+                </div>
+            </div>
+        </div>
+        <!--section card-->
+
+        <div class="center">
+            {% for i in range %}
+            <div class="property-card">
+                <a href="#">
+                    <div class="property-image">
+                        <div class="property-image-title">
+                            <!-- Optional <h5>Card Title</h5> If you want it, turn on the CSS also. -->
+                        </div>
+                    </div>
+                </a>
+                <div class="property-description">
+                    <h5> Card Title </h5>
+                    <p class="para-desc">Lorem Ipsum Dipsorem Ipsum Dipsum hortata. Mixcall Horcho. Mixwell Chingo. More Bingo. rem Ipsum Dipsorem Ipsum Dipsum hortata. Mixcall Horcho. Mixwell Chingo. More Bingo. rem Ipsum Dipsorem Ipsum Dipsum hortata. Mixcall Horcho. Mixwell Chingo. More Bingo. rem Ipsum Dipsorem Ipsum Dipsum hortata. Mixcall Horcho. Mixwell Chingo. More Bingo. rem Ipsum Dipsorem Ipsum Dipsum hortata. Mixcall Horcho. Mixwell Chingo. More Bingo. Lorem Ipum doth beorem Ipsum Dipsum hortata. Mixcall Horcho. Mixwell Chingo. More Bingo. Lorem Ipum doth beum hortata. Mixcall Horcho. Mixwell Chingo. More Bingo. Lorem Ipum doth be
+                        hard.</p>
+                </div>
+                <a href="#">
+
+                </a>
+            </div>
+             {% endfor %}
+        </div>
+
+    <aside>
+
+    </aside>
+
+    </section>
+<footer>
+<div class="footer">
+<div class="row">
+<a href="#"><i class="fa fa-facebook"></i></a>
+<a href="#"><i class="fa fa-instagram"></i></a>
+<a href="#"><i class="fa fa-youtube"></i></a>
+<a href="#"><i class="fa fa-twitter"></i></a>
+</div>
+
+<div class="row">
+<ul>
+<li><a href="#">Contact us</a></li>
+<li><a href="#">Our Services</a></li>
+<li><a href="#">Privacy Policy</a></li>
+<li><a href="#">Terms & Conditions</a></li>
+<li><a href="#">Career</a></li>
+</ul>
+</div>
+
+<div class="row">
+INFERNO Copyright © 2021 Inferno - All rights reserved || Designed By: miklar
+</div>
+</div>
+</footer>
+{% endblock %}
