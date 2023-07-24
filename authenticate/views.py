@@ -39,7 +39,7 @@ def signup(request):
                 error_message = messages.error(request, error_message)
             return render(request, 'authenticate/signup.html', context={'error':error_message, 'succes':succes_message})
 
-    return render(request, 'authenticate/signup.html')
+    return render(request,'authenticate/signup.html')
 
 
 def login_user(request):
