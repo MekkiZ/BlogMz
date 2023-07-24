@@ -1,92 +1,343 @@
 *,
 *::after,
-*::before{
+*::before {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    overflow-x:hidden ;
 }
 
-.html{
+.footer {
+    background: #000;
+    padding: 30px 0px;
+    font-family: 'Play', sans-serif;
+    text-align: center;
+}
+
+.footer .row {
+    width: 100%;
+    margin: 1% 0%;
+    padding: 0.6% 0%;
+    color: gray;
+    font-size: 1.2em;
+}
+.footer .row ul {
+
+    font-size: 19px;
+}
+
+
+.footer .row a {
+    text-decoration: none;
+    color: gray;
+    transition: 0.5s;
+}
+
+.footer .row a:hover {
+    color: #fff;
+}
+
+.footer .row ul {
+    width: 100%;
+}
+
+.footer .row ul li {
+    display: inline-block;
+    margin: 0px 30px;
+}
+
+.footer .row a i {
+    font-size: 6em;
+    margin: 0% 1%;
+}
+
+
+/* Slide and carousel section */
+.container-section {
+    background: black;
+    height: 100vh;
+    max-width: 100vw;
+}
+
+.slider-1 {
+    max-width: 100vw;
+    height: 500px;
+    margin: 76px auto;
+    overflow: hidden;
+
+
+}
+
+.slider-1 .slider {
+    animation: slider-1 35s infinite ease-in-out;
+    display: flex;
+
+    /* Si on veut faire glisser vers la droite */
+    /* Il faut aussi changer l'animation(transform) en valeurs positives */
+    /* flex-direction: row-reverse; */
+}
+
+.slider-1 div .container-article {
+    background: #000;
+    flex-shrink: 0;
+    padding: 72px 0;
+    width: 100vw;
+    text-align: center;
+    font-size: 45px;
+    color: #f1f1f1;
+    height: 500px;
+}
+
+
+/*
+   5% par transition, nombre choisi arbitrairement.
+   reste divisé par nb de pauses
+   80(%) / 4 = 20(%) par pause
+*/
+
+@keyframes slider-1 {
+    0%,
+    20% {
+        transform: translateX(0);
+    }
+    25%,
+    45% {
+        transform: translateX(-100%);
+    }
+    50%,
+    70% {
+        transform: translateX(-200%);
+    }
+    75%,
+    95% {
+        transform: translateX(-300%);
+    }
+    100% {
+        transform: translateX(-400%);
+    }
+}
+
+/* Body and nav bar section with responsive */
+body {
     font-size: 62.5%;
-    background: #858080;
+    background: #444f58;
 }
 
 .navbar input[type="checkbox"],
-.navbar .hamburger-lines{
+.navbar .hamburger-lines {
     display: none;
 }
 
-.container{
-    max-width: 1200px;
-    width: 90%;
+.container {
+    max-width: 85vw;
+    width: 100vw;
     margin: auto;
 }
 
-.navbar{
-    box-shadow: 0px 5px 10px 0px #e3e0e0;
+.navbar {
+
     position: fixed;
     width: 100vw;
-    height: 80px;
+    height: 86px;
     background: #fff;
     color: #000;
     opacity: 0.85;
     z-index: 100;
-    border-radius: 18px;
+    overflow-x: hidden;
+
 }
 
-.navbar-container{
+.navbar-container {
     display: flex;
     justify-content: space-between;
     height: 64px;
     align-items: center;
+    overflow: hidden;
 }
 
-.menu-items{
+.menu-items {
     order: 2;
     display: flex;
     padding-top: 15px;
 }
-.logo{
+
+.logo {
     order: 1;
     font-size: 2.3rem;
     margin-top: 18px;
     width: 65px;
 }
 
-.menu-items li{
+.menu-items li {
     list-style: none;
     margin-left: 1.5rem;
     font-size: 1.3rem;
 }
 
-.navbar a{
+.navbar a {
     color: #444;
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease-in-out;
 }
 
-.navbar a:hover{
+.navbar a:hover {
     color: #117964;
 }
 
-@media (max-width: 768px){
-    .navbar{
+/* section card */
+
+h5 {
+    margin: 0px;
+    font-size: 1.4em;
+    font-weight: 700;
+}
+
+.property-description p {
+    font-size: 12px;
+}
+
+.center {
+
+    width: 100vw;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+
+/* End Non-Essential  */
+
+.property-card {
+    height: 40vh;
+    width: 30vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    position: relative;
+    -webkit-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    -o-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    border-radius: 16px;
+    overflow: hidden;
+
+}
+
+/* ^-- The margin bottom is necessary for the drop shadow otherwise it gets clipped in certain cases. */
+
+/* Top Half of card, image. */
+
+.property-image {
+    height: 30vh;
+    width: 40vw;
+    padding: 1em 2em;
+    position: Absolute;
+    top: 0px;
+    -webkit-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    -o-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    background-image: url('https://cdn.photographylife.com/wp-content/uploads/2017/01/What-is-landscape-photography.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* Bottom Card Section */
+
+.property-description {
+    background-color: #FAFAFC;
+    overflow: scroll;
+    height: 12vh;
+    width: 30vw;
+    position: absolute;
+    bottom: 0em;
+    -webkit-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    -o-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    padding: 10px;
+    text-align: center;
+}
+
+/* Social Icons */
+
+.property-social-icons {
+    width: 1vh;
+    height: 1vh;
+    background-color: black;
+    position: absolute;
+    bottom: 1em;
+    left: 1em;
+    -webkit-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    -o-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+/* Property Cards Hover States */
+
+.property-card:hover .property-description {
+    height: 40vh;
+    overflow: scroll;
+    padding: 12px;
+}
+
+.property-card:hover .property-image {
+    height: 18vh;
+}
+
+.property-card:hover .property-social-icons {
+    background-color: white;
+}
+
+.property-card:hover .property-social-icons:hover {
+    background-color: blue;
+    cursor: pointer;
+}
+
+
+/*
+.property-image-title
+{
+text-align:center;
+position:Relative;
+top:30%;
+opacity:0;
+transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s;
+color:black;
+font-size:1.2em;
+}
+
+.property-card:hover .property-image-title
+{
+opacity:1;
+}
+*/
+
+@media (max-width: 768px) {
+    body {
+        background: black;
+
+    }
+
+    .navbar {
         opacity: 0.95;
     }
 
     .navbar-container input[type="checkbox"],
-    .navbar-container .hamburger-lines{
+    .navbar-container .hamburger-lines {
         display: block;
     }
 
-    .navbar-container{
+    .navbar-container {
         display: block;
         position: relative;
         height: 64px;
     }
 
-    .navbar-container input[type="checkbox"]{
+    .navbar-container input[type="checkbox"] {
         position: absolute;
         display: block;
         height: 32px;
@@ -98,7 +349,7 @@
         cursor: pointer;
     }
 
-    .navbar-container .hamburger-lines{
+    .navbar-container .hamburger-lines {
         display: block;
         height: 28px;
         width: 35px;
@@ -111,7 +362,7 @@
         justify-content: space-between;
     }
 
-    .navbar-container .hamburger-lines .line{
+    .navbar-container .hamburger-lines .line {
         display: block;
         height: 4px;
         width: 100%;
@@ -119,21 +370,21 @@
         background: #333;
     }
 
-    .navbar-container .hamburger-lines .line1{
+    .navbar-container .hamburger-lines .line1 {
         transform-origin: 0% 0%;
         transition: transform 0.3s ease-in-out;
     }
 
-    .navbar-container .hamburger-lines .line2{
+    .navbar-container .hamburger-lines .line2 {
         transition: transform 0.2s ease-in-out;
     }
 
-    .navbar-container .hamburger-lines .line3{
+    .navbar-container .hamburger-lines .line3 {
         transform-origin: 0% 100%;
         transition: transform 0.3s ease-in-out;
     }
 
-    .navbar .menu-items{
+    .navbar .menu-items {
         padding-top: 100px;
         background: #fff;
         height: 100vh;
@@ -144,17 +395,17 @@
         margin-left: -40px;
         padding-left: 40px;
         transition: transform 0.5s ease-in-out;
-        box-shadow:  5px 0px 10px 0px #aaa;
+
         overflow: scroll;
     }
 
-    .navbar .menu-items li{
+    .navbar .menu-items li {
         margin-bottom: 1.8rem;
         font-size: 1.1rem;
         font-weight: 500;
     }
 
-    .logo{
+    .logo {
         position: absolute;
         top: -10px;
         right: 15px;
@@ -162,26 +413,129 @@
 
     }
 
-    .navbar-container input[type="checkbox"]:checked ~ .menu-items{
+    .navbar-container input[type="checkbox"]:checked ~ .menu-items {
         transform: translateX(0);
     }
 
-    .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line1{
+    .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
         transform: rotate(45deg);
     }
 
-    .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line2{
+    .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line2 {
         transform: scaleY(0);
     }
 
-    .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line3{
+    .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
         transform: rotate(-45deg);
     }
 
+    h5 {
+        margin: 0px;
+        font-size: 1.4em;
+        font-weight: 700;
+    }
+
+    .property-description p {
+        font-size: 12px;
+    }
+
+    .center {
+        align-items: center;
+        width: 100vw;
+        padding: 200px 200px 200px 200px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+    }
+
+    /* End Non-Essential  */
+    .property-card {
+        height: 40vh;
+        width: 70vw;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        position: relative;
+        -webkit-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+        -o-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+        transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+        border-radius: 16px;
+        overflow: hidden;
+        margin: 30px 30px 30px 30px;
+
+    }
+
+    /* ^-- The margin bottom is necessary for the drop shadow otherwise it gets clipped in certain cases. */
+    /* Top Half of card, image. */
+    .property-image {
+        height: 30vh;
+        width: 70vw;
+        padding: 1em 2em;
+        position: Absolute;
+        top: 0px;
+        -webkit-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+        -o-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+        transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+        background-image: url('https://cdn.photographylife.com/wp-content/uploads/2017/01/What-is-landscape-photography.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    /* Bottom Card Section */
+    .property-description {
+        background-color: #FAFAFC;
+        overflow: hidden;
+        height: 12vh;
+        width: 70vw;
+        position: absolute;
+        bottom: 0em;
+        -webkit-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+        -o-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+        transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+        padding: 1em 1em;
+        text-align: center;
+    }
+
+    /* Social Icons */
+    /* Property Cards Hover States */
+    .property-card:hover .property-description {
+        height: 40vh;
+        overflow: scroll;
+        padding: 7px 1em;
+    }
+
+    .property-card:hover .property-image {
+        height: 18vh;
+    }
+
+    .property-card:hover .property-social-icons {
+        background-color: white;
+    }
+
+    .property-card:hover .property-social-icons:hover {
+        background-color: blue;
+        cursor: pointer;
+    }
+
+    footer{
+        margin: 1400px 200px;
+    }
+    .row ul{
+        font-size: 23px;
+    }
+
+
 }
 
-@media (max-width: 500px){
-    .navbar-container input[type="checkbox"]:checked ~ .logo{
+@media (max-width: 500px) {
+    .navbar-container input[type="checkbox"]:checked ~ .logo {
         display: none;
     }
 }
+
