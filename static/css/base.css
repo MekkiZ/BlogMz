@@ -1,99 +1,292 @@
-*,
-*::after,
-*::before {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    overflow-x:hidden ;
+*{
+    box-shadow: 0 0 0 3px red
+    inset;
 }
 
-.footer {
-    background: #000;
-    padding: 30px 0px;
-    font-family: 'Play', sans-serif;
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+    background: black;
+}
+
+/* ------------------------------Parti profile/salon/Dash -------------------------------*/
+
+.container_widget{
+    height: 100vh;
+    width: 100vw;
+    background: yellowgreen;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction:column;
+    justify-content: space-around;
+}
+.sub_contain{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.widget_dash{
+
+    border: solid 3px red;
+    height: 20vh;
+    width: 20vw;
+
+}
+
+
+/* ------------------------------Parti login -------------------------------*/
+.log_sec {
+    max-width: 400px;
+    background-color: #1c1111;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(165px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6rem 3rem;
+    margin:50px auto ;
+}
+
+h1 {
+    font-size: 2rem;
+    color: #fff;
     text-align: center;
 }
 
-.footer .row {
+.inputbox {
+    position: relative;
+    margin: 30px 0;
+    max-width: 310px;
+    border-bottom: 2px solid #fff;
+}
+
+.inputbox label {
+    position: absolute;
+    top: 54%;
+    left: 5px;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 1rem;
+    pointer-events: none;
+    transition: all 0.5s ease-in;
+}
+
+input:focus ~ label,
+input:valid ~ label {
+    top: -10px;
+}
+
+.inputbox input {
     width: 100%;
-    margin: 1% 0%;
-    padding: 0.6% 0%;
-    color: gray;
-    font-size: 1.2em;
-}
-.footer .row ul {
-
-    font-size: 19px;
-}
-
-
-.footer .row a {
-    text-decoration: none;
-    color: gray;
-    transition: 0.5s;
-}
-
-.footer .row a:hover {
+    height: 60px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    padding: 0 35px 0 5px;
     color: #fff;
 }
 
-.footer .row ul {
+.inputbox ion-icon {
+    position: absolute;
+    right: 8px;
+    color: #fff;
+    font-size: 1.2rem;
+    top: 2-0px;
+}
+
+.forget {
+    margin: 35px 0;
+    font-size: 0.9rem;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+}
+
+.forget label input {
+    margin-right: 3px;
+}
+
+.forget label a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.forget label a:hover {
+    text-decoration: underline;
+}
+
+button {
     width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    background-color: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
 }
 
-.footer .row ul li {
+.register {
+    font-size: 0.9rem;
+    color: #fff;
+    text-align: center;
+    margin: 25px 0 10px;
+}
+
+.register p a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+}
+
+.register p a:hover {
+    text-decoration: underline;
+}
+
+/* ------------------------------Parti create Form -------------------------------*/
+
+.form_for_admin {
+    margin: 100px 100px 0 200px;
+
+    background: red;
+    position: absolute;
+    width: 80vw;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.cont_for_admin {
+    position: static;
+    background: blue;
+    width: 100%;
+    height: 950px;
+
+}
+
+/* ------------------------------Parti card in index website -------------------------------*/
+.titre-card {
+    font-size: 45px;
+    color: White;
+    margin-left: 30px;
+    padding-bottom: 30px;
+
+}
+
+
+/* button animation more Article */
+/* CSS */
+.button-19 {
+
+    background-color: #1899D6;
+    border: solid transparent;
+    border-radius: 16px;
+    border-width: 0 0 4px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
     display: inline-block;
-    margin: 0px 30px;
+    font-family: din-round, sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: .8px;
+    line-height: 20px;
+    margin: 1% 0 0 46.5%;
+    outline: none;
+    overflow: visible;
+    padding: 13px 16px;
+    text-align: center;
+    align-items: center;
+    text-transform: uppercase;
+    touch-action: manipulation;
+    transform: translateZ(0);
+    transition: filter .2s;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+    width: 220px;
+    height: 70px;
 }
 
-.footer .row a i {
-    font-size: 6em;
-    margin: 0% 1%;
+.button-19:after {
+    background-clip: padding-box;
+    background-color: #1CB0F6;
+    border: solid transparent;
+    border-radius: 16px;
+    border-width: 0 0 4px;
+    bottom: -4px;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
 }
 
+.button-19:main,
+.button-19:focus {
+    user-select: auto;
+}
 
-/* Slide and carousel section */
+.button-19:hover:not(:disabled) {
+    filter: brightness(1.1);
+    -webkit-filter: brightness(1.1);
+}
+
+.button-19:disabled {
+    cursor: auto;
+}
+
+/* ------------------------------Part carrousel index website -------------------------------*/
 .container-section {
     background: black;
     height: 100vh;
-    max-width: 100vw;
+    width: 100vw;
+
 }
+
 
 .slider-1 {
     max-width: 100vw;
-    height: 500px;
-    margin: 76px auto;
+    height: 600px;
+    margin: 75px;
     overflow: hidden;
 
+    padding-top: 50px;
 
 }
 
 .slider-1 .slider {
-    animation: slider-1 35s infinite ease-in-out;
+    animation: slider-1 12s infinite ease-in-out;
     display: flex;
+    height: 600px;
 
     /* Si on veut faire glisser vers la droite */
     /* Il faut aussi changer l'animation(transform) en valeurs positives */
     /* flex-direction: row-reverse; */
 }
 
-.slider-1 div .container-article {
+.slider-1 p {
     background: #000;
     flex-shrink: 0;
     padding: 72px 0;
-    width: 100vw;
+    width: 100%;
     text-align: center;
     font-size: 45px;
     color: #f1f1f1;
-    height: 500px;
 }
 
-
-/*
-   5% par transition, nombre choisi arbitrairement.
-   reste divisé par nb de pauses
-   80(%) / 4 = 20(%) par pause
-*/
 
 @keyframes slider-1 {
     0%,
@@ -117,11 +310,7 @@
     }
 }
 
-/* Body and nav bar section with responsive */
-body {
-    font-size: 62.5%;
-    background: #444f58;
-}
+/* ------------------------------Parti navBar for all website -------------------------------*/
 
 .navbar input[type="checkbox"],
 .navbar .hamburger-lines {
@@ -136,14 +325,14 @@ body {
 
 .navbar {
 
-    position: fixed;
+    position: static;
     width: 100vw;
     height: 86px;
     background: #fff;
     color: #000;
-    opacity: 0.85;
+
     z-index: 100;
-    overflow-x: hidden;
+
 
 }
 
@@ -152,7 +341,7 @@ body {
     justify-content: space-between;
     height: 64px;
     align-items: center;
-    overflow: hidden;
+
 }
 
 .menu-items {
@@ -185,7 +374,9 @@ body {
     color: #117964;
 }
 
+
 /* section card */
+
 
 h5 {
     margin: 0px;
@@ -203,17 +394,15 @@ h5 {
 
     display: flex;
     flex-direction: row;
+    padding: 0;
     justify-content: space-around;
 
 }
 
-/* End Non-Essential  */
-
 .property-card {
     height: 40vh;
     width: 30vw;
-    display: -webkit-box;
-    display: -ms-flexbox;
+
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -227,10 +416,6 @@ h5 {
     overflow: hidden;
 
 }
-
-/* ^-- The margin bottom is necessary for the drop shadow otherwise it gets clipped in certain cases. */
-
-/* Top Half of card, image. */
 
 .property-image {
     height: 30vh;
@@ -246,8 +431,6 @@ h5 {
     background-repeat: no-repeat;
 }
 
-/* Bottom Card Section */
-
 .property-description {
     background-color: #FAFAFC;
     overflow: scroll;
@@ -262,8 +445,6 @@ h5 {
     text-align: center;
 }
 
-/* Social Icons */
-
 .property-social-icons {
     width: 1vh;
     height: 1vh;
@@ -275,8 +456,6 @@ h5 {
     -o-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
     transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
-
-/* Property Cards Hover States */
 
 .property-card:hover .property-description {
     height: 40vh;
@@ -297,24 +476,58 @@ h5 {
     cursor: pointer;
 }
 
+/*footer*/
+.footer {
+    background: #363232;
+    width: 100vw;
+    padding: 20px 0 10px  0;
+    font-family: 'Play', sans-serif;
+    text-align: center;
+    color: black;
+    margin: 90px 0 0 0;
+    position: relative;
+    bottom:0 ;
 
-/*
-.property-image-title
-{
-text-align:center;
-position:Relative;
-top:30%;
-opacity:0;
-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s;
-color:black;
-font-size:1.2em;
 }
 
-.property-card:hover .property-image-title
-{
-opacity:1;
+.footer .row {
+    width: 100%;
+    margin: 1% 0%;
+    padding: 0.6% 0%;
+    color: gray;
+    font-size: 1.2em;
 }
-*/
+
+.footer .row ul {
+
+    font-size: 19px;
+}
+
+
+.footer .row a {
+    text-decoration: none;
+    color: gray;
+    transition: 0.5s;
+}
+
+.footer .row a:hover {
+    color: #fff;
+}
+
+.footer .row ul {
+    width: 100%;
+}
+
+.footer .row ul li {
+    display: inline-block;
+    margin: 0px 30px;
+}
+
+.footer .row a i {
+    font-size: 6em;
+    margin: 0% 1%;
+}
+
 
 @media (max-width: 768px) {
     body {
@@ -442,7 +655,7 @@ opacity:1;
     .center {
         align-items: center;
         width: 100vw;
-        padding: 200px 200px 200px 200px;
+        padding: 0px 200px 10px 200px;
 
         display: flex;
         flex-direction: column;
@@ -523,11 +736,76 @@ opacity:1;
         cursor: pointer;
     }
 
-    footer{
-        margin: 1400px 200px;
+    .footer {
+        margin: 500px 0 0 0;
+
     }
-    .row ul{
+
+    .row ul {
         font-size: 23px;
+    }
+
+    .button-19 {
+
+        background-color: #1899D6;
+        border: solid transparent;
+        border-radius: 16px;
+        border-width: 0 0 4px;
+        box-sizing: border-box;
+        color: #FFFFFF;
+        cursor: pointer;
+        display: inline-block;
+        font-family: din-round, sans-serif;
+        font-size: 15px;
+        font-weight: 700;
+        letter-spacing: .8px;
+        line-height: 20px;
+        outline: none;
+        overflow: visible;
+        padding: 13px 16px;
+        text-align: center;
+        align-items: center;
+        text-transform: uppercase;
+        touch-action: manipulation;
+        transform: translateZ(0);
+        transition: filter .2s;
+        user-select: none;
+        -webkit-user-select: none;
+        vertical-align: middle;
+        white-space: nowrap;
+        width: 180px;
+        height: 70px;
+        margin: 0 0 0 35%;
+
+    }
+
+    .button-19:after {
+        background-clip: padding-box;
+        background-color: #1CB0F6;
+        border: solid transparent;
+        border-radius: 16px;
+        border-width: 0 0 4px;
+        bottom: -4px;
+        content: "";
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: -1;
+    }
+
+    .button-19:main,
+    .button-19:focus {
+        user-select: auto;
+    }
+
+    .button-19:hover:not(:disabled) {
+        filter: brightness(1.1);
+        -webkit-filter: brightness(1.1);
+    }
+
+    .button-19:disabled {
+        cursor: auto;
     }
 
 
@@ -538,4 +816,5 @@ opacity:1;
         display: none;
     }
 }
+
 

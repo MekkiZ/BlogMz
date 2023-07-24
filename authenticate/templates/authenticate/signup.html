@@ -1,0 +1,61 @@
+{% extends 'article/base.html' %}
+{% load static %}
+{% block content %}
+
+
+    {% if messages %}
+
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message  }}</li>
+    {% endfor %}
+
+    {% endif %}
+    </ul>
+
+    {{error_user}}
+
+   <section class="log_sec">
+        <form action="" method="POST"  enctype="multipart/form-data">
+            <h1>Inscription</h1>
+            <div class="inputbox">
+                <ion-icon name="mail-outline"></ion-icon>
+                <input type="username" name="username" required>
+                <label for="">Pseudo</label>
+            </div>
+            <div class="inputbox">
+                <ion-icon name="lock-closed-outline"></ion-icon>
+                <input type="email" name="email" required>
+                <label for="">Email</label>
+            </div>
+             <div class="inputbox">
+                <ion-icon name="lock-closed-outline"></ion-icon>
+                <input type="password" name="password" required>
+                <label for="">Mots de passe </label>
+            </div>
+             <div class="inputbox">
+                <ion-icon name="lock-closed-outline"></ion-icon>
+                <input type="password2" name="password2" required>
+                <label for="">Confirmer mots de passe</label>
+            </div>
+            <div class="inputbox">
+                <ion-icon name="lock-closed-outline"></ion-icon>
+                <input name="job" required>
+                <label for="">Ton job ou situation</label>
+            </div>
+             <input id="image" type="file" placeholder="Avatar" alt="image_uplaod_avatar" name="images">
+            <br>
+            <br>
+            {% csrf_token %}
+            <button type="submit" >Sign up</button>
+            <div class="register">
+                <p>Deja un compte<a href="{% url 'login' %}">Connexion</a></p>
+            </div>
+        </form>
+    </section>
+
+
+
+
+
+{% endblock %}

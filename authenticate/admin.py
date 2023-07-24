@@ -1,3 +1,8 @@
 from django.contrib import admin
+from authenticate.models import UserCus
+from profil.models import Profile
 
-# Register your models here.
+
+admin.site.register(UserCus)
+admin.site.register(Profile)
+

@@ -1,0 +1,24 @@
+{% extends 'article/base.html' %}
+{% load static %}
+{% block content %}
+
+
+
+
+
+
+    <section class="cont_for_admin">
+        <form class="form_for_admin" action="" method="post">
+            <input id="name" type="text" placeholder="NAME">
+            <input id="image" type="file"  alt="image_uplaod">
+            <input id="email" type="text" placeholder="E-MAIL">
+            <textarea id="message" type="text" placeholder="MESSAGE"></textarea>
+            <input id="submit" type="submit" value="GO!">
+                {% csrf_token %}
+        </form>
+    </section>
+
+
+
+
+{% endblock %}

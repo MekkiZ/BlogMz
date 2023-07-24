@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="{% static 'static/css/base.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=1" />
+
 
     <!--GOOGLE FONTS-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -22,18 +24,40 @@
                 <span class="line line3"></span>
             </div>
             <ul class="menu-items">
-                <li><a href="#">Articles</a></li>
-                <li><a href="#">Postes</a></li>
-                <li><a href="#">Abonnements</a></li>
-                <li><a href="#">connexion</a></li>
-                <li><a href="#"></a></li>
+                <li><a href="{% url 'articles' %}">Articles</a></li>
+                <li><a href="{% url 'posts' %}">Postes</a></li>
+                <li><a href="{% url 'followings' %}">Abonnements</a></li>
+                    {% if user.is_authenticate  %}
+                <li><a href="#">Mon salon</a></li>
+                     {% else %}
+                    <li><a href="{% url 'login' %}">connexion</a></li>
+                    {% endif %}
+
                 <li><a href="#">Contact</a></li>
             </ul>
-            <img class="logo" src="/static/media/article/images/log_white.png" alt="logo MWF">
+            <a href="{% url 'home' %}"><img class="logo" src="/static/media/article/images/log_white.png" alt="logo MWF" ></a>
         </div>
     </nav>
 </header>
 {% block content %}{% endblock %}
+<footer>
+        <div class="footer">
 
+
+            <div class="row">
+                <ul>
+                    <li><a href="#">Contact us</a></li>
+                    <li><a href="#">Our Services</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Career</a></li>
+                </ul>
+            </div>
+
+            <div class="row">
+                All rights reserved || Designed By: miklar
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

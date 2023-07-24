@@ -9,7 +9,7 @@ class Article(models.Model):
     title = models.CharField(max_length=300)
     body = models.TextField(blank=False, null=False)
     date = models.DateField()
-    image = models.ImageField(blank=True, null=True, upload_to=settings.MEDIA_ROOT)
+    image = models.ImageField(blank=True, null=True, upload_to='article/%Y/%m/%d')
 
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)

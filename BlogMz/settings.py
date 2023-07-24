@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'authenticate',
     'posts',
     'profil',
-    'tailwind'
+    'psycopg2'
 ]
 AUTH_USER_MODEL = 'authenticate.UserCus'
 
@@ -79,8 +79,12 @@ WSGI_APPLICATION = 'BlogMz.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'mkzw',
+        'USER': 'adminikkemb',
+        'PASSWORD': 'Jesuislehackwhite',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
@@ -102,6 +106,9 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTHENTICATION_BACKENDS = [
+    "django.contrib.auth.backends.ModelBackend"
+]
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
@@ -117,6 +124,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/media/article/images/')
+
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR), "static",
@@ -126,3 +135,4 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+AUTH_USER_MODEL = 'authenticate.UserCus'
