@@ -19,6 +19,7 @@ class UserCus(AbstractUser):
     job = models.CharField(max_length=30)
     image = models.ImageField(blank=True, null=True, upload_to='Profile/%Y/%m/%d')
 
+
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
         img = Image.open(self.image.path)
@@ -26,3 +27,12 @@ class UserCus(AbstractUser):
             output_size = (180, 180)
             img.thumbnail(output_size)
             img.save(self.image.path)
+
+    @property
+    def full_name(self):
+        return f'{self.first_name} {self.last_name}'
+
+    def __str__(self):
+        return f'{self.email} - {self.full_name}'
+
+  

@@ -20,30 +20,32 @@
             <h1>Inscription</h1>
             <div class="inputbox">
                 <ion-icon name="mail-outline"></ion-icon>
-                <input type="username" name="username" required>
+
+                {{ form.username }}
                 <label for="">Pseudo</label>
             </div>
             <div class="inputbox">
                 <ion-icon name="lock-closed-outline"></ion-icon>
-                <input type="email" name="email" required>
+                {{ form.mail }}
                 <label for="">Email</label>
             </div>
+
              <div class="inputbox">
                 <ion-icon name="lock-closed-outline"></ion-icon>
-                <input type="password" name="password" required>
+                {{ form.password1 }}
                 <label for="">Mots de passe </label>
             </div>
              <div class="inputbox">
                 <ion-icon name="lock-closed-outline"></ion-icon>
-                <input type="password2" name="password2" required>
+               {{ form.password2 }}
                 <label for="">Confirmer mots de passe</label>
             </div>
             <div class="inputbox">
                 <ion-icon name="lock-closed-outline"></ion-icon>
-                <input name="job" required>
+                {{ form.job }}
                 <label for="">Ton job ou situation</label>
             </div>
-             <input id="image" type="file" placeholder="Avatar" alt="image_uplaod_avatar" name="images">
+            {{form.image}}
             <br>
             <br>
             {% csrf_token %}
